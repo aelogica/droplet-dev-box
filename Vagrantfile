@@ -20,4 +20,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     provider.image = CONFIG['name']
   end
 
+  config.vm.provision "ansible" do |ansible|
+    ansible.playbook = "playbook.yml"
+  end
+
 end
